@@ -21,21 +21,21 @@
 	<input type="submit" value="添加" />
 </form>
 <script type="text/javascript">
-windows.onload=function(){
-	document.getElementById("name").onblur=function(){
-		var xhr=getXhr();
-		xhr.onreadystatechange=function(){
-			if(xhr.readyState==4){
-				if(xhr.status==200){
-					document.getElementById("sname").innerHTML=xhr.respnoseText;
+	windows.onload=function(){
+		document.getElementById("name").onblur=function(){
+			var xhr=getXhr();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						document.getElementById("sname").innerHTML=xhr.respnoseText;
+					}
 				}
 			}
+			var nameValue=encodeURI(this.value);
+			xhr.open("GET","${pageContext.request.contextPath}/manage/ManageServlet?op=checkCategory&Name="+nameValue+"&time="+new Date().getTime());
+			xhr.send(null);
 		}
-		var nameValue=encodeURI(this.value);
-		xhr.open("GET","${pageContext.request.ContextPath}/manage/ManageServlet?op=checkCategory&Name="+nameValue+"&time="+new Data().getTime());
-		xhr.send(null);
 	}
-}
 </script>
 </body>
 </html>

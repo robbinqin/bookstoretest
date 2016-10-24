@@ -1,6 +1,8 @@
-#Wed Oct 19 17:17:30 CST 2016
+#Mon Oct 24 10:03:57 CST 2016
 eclipse.preferences.version=1
 encoding//WebRoot/manage/index.jsp=UTF-8
 encoding//src/com/lce/dao/impl/CategoryDaoImpl.java=UTF-8
+encoding//src/com/lce/filter/SetAllCharacterEncodingFilter.java=UTF-8
 encoding//src/com/lce/web/controller/ManageServlet.java=UTF-8
 encoding//src/dbcpconfig.properties=UTF-8
+encoding/<project>=UTF-8

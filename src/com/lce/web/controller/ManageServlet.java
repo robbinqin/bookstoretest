@@ -24,9 +24,14 @@ public class ManageServlet extends HttpServlet {
 
 	private void checkCategory(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String name=request.getParameter("name");
+		PrintWriter out=response.getWriter();//也有编码问题 过滤器
+		String name=request.getParameter("name");//注意编码问题， GET方式提交 过滤器
 		boolean exist=businessService.isCategoryExist(name);
-		
+		if(exist){
+			out.write("<font color='red'>已经存在</font>");
+		}else{
+			out.write("<font color='green'>可以用</font>");
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
